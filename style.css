@@ -3,16 +3,16 @@
   margin: 0;
   box-sizing: border-box;
 }
-section {
+section.glass-menu {
   position: relative;
   background-color: rgb(38, 43, 60);
-  min-height: 100vh;
+  min-height: 85vh;
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-section::before {
+section.glass-menu::before {
   content: "";
   position: absolute;
   height: 300px;
@@ -21,7 +21,7 @@ section::before {
   border-radius: 50%;
   transform: translate(-250px, -120px);
 }
-section::after {
+section.glass-menu::after {
   content: "";
   position: absolute;
   height: 300px;
@@ -30,7 +30,7 @@ section::after {
   border-radius: 50%;
   transform: translate(250px, 150px);
 }
-.box {
+section.glass-menu .box {
   position: relative;
   min-width: 350px;
   min-height: 400px;
@@ -44,11 +44,11 @@ section::after {
   padding: 20px;
   backdrop-filter: blur(25px);
 }
-.box h3 {
+section.glass-menu .box h3 {
   color: #fff;
   margin-bottom: 20px;
 }
-.box .list {
+section.glass-menu .box .list {
   position: relative;
   display: flex;
   padding: 10px;
@@ -59,13 +59,13 @@ section::after {
   transition: 0.5s;
   overflow: hidden;
 }
-.box .list:hover {
+section.glass-menu .box .list:hover {
   background: #fff;
   box-shadow: -15px 30px 50px rgba(0, 0, 0, 0.5);
   transform: scale(1.15) translateX(30px) translateY(-15px);
   z-index: 20;
 }
-.box .list .imgBx {
+section.glass-menu .box .list .imgBx {
   position: relative;
   width: 60px;
   height: 60px;
@@ -73,7 +73,7 @@ section::after {
   overflow: hidden;
   margin-right: 10px;
 }
-.box .list .imgBx img {
+section.glass-menu .box .list .imgBx img {
   position: absolute;
   top: 0;
   left: 0;
@@ -81,13 +81,13 @@ section::after {
   height: 100%;
   object-fit: cover;
 }
-.box .list .content {
+section.glass-menu .box .list .content {
   display: flex;
   flex-direction: column;
   justify-content: center;
   color: #fff;
 }
-.box .list .content .rank {
+section.glass-menu .box .list .content .rank {
   position: absolute;
   right: -50px;
   color: #03a9f4;
@@ -95,23 +95,86 @@ section::after {
   font-weight: 2em;
   font-size: 2em;
 }
-.box .list .content .rank small {
+section.glass-menu .box .list .content .rank small {
   font-weight: 500;
   opacity: 0.25;
 }
-.box .list:hover .content .rank {
+section.glass-menu .box .list:hover .content .rank {
   right: 20px;
 }
-.box .list .content h4 {
+section.glass-menu .box .list .content h4 {
   line-height: 1.2em;
   font-weight: 600;
   transition: 0.5s;
 }
-.box .list .content p {
+section.glass-menu .box .list .content p {
   font-size: 0.7em;
   transition: 0.5s;
 }
-.box .list:hover .content h4,
-.box .list:hover .content p {
+section.glass-menu .box .list:hover .content h4,
+section.glass-menu .box .list:hover .content p {
+  color: #333;
+}
+
+/* 2nd effect */
+section.rotate2022 {
+  background-color: rgb(46, 46, 46);
+  min-height: 85vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+section.rotate2022 .container {
+  display: flex;
+  transform-style: preserve-3d;
+  gap: 10px;
+  transform: rotateY(30deg) rotateX(10deg);
+}
+section.rotate2022 .container .text {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  transition: 2.5s ease-in-out;
+  transition-delay: calc(0.25s * var(--j));
+}
+section.rotate2022 .container:hover .text {
+  transform: rotateX(-360deg);
+}
+section.rotate2022 .container:hover .text:last-child {
+  transform: rotateX(630deg);
+}
+section.rotate2022 .container .text::before {
+  content: "";
+  position: absolute;
+  width: 102%;
+  height: 102%;
+  background-color: rgb(65, 65, 65);
+  transform-origin: left;
+  transform: rotateY(90deg) translateX(-51px);
+}
+
+section.rotate2022 .container .text:last-child::before {
+  background-color: #008a05;
+}
+section.rotate2022 .container .text span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(rgb(62, 62, 62), rgb(89, 89, 89));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4em;
+  font-weight: 700;
+  color: white;
+  transform-style: preserve-3d;
+  transform: rotateX(calc(90deg * var(--i))) translateZ(50px);
+}
+section.rotate2022 .container .text:last-child span {
+  background: linear-gradient(rgb(12, 135, 12), rgb(0, 162, 0));
   color: #333;
 }
