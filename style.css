@@ -3,6 +3,81 @@
   margin: 0;
   box-sizing: border-box;
 }
+section.parallel-scroll {
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  background-color: #131313;
+}
+section.parallel-scroll .layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 250vh;
+  background-color: #fff;
+  box-shadow: inset -10px 0 40px rgba(0, 0, 0, 1),
+    inset 10px 0 40px rgba(0, 0, 0, 1),
+    inset -10px 0 10px rgba(255, 255, 255, 0.25),
+    inset 10px 0 10px rgba(255, 255, 255, 0.25), 0 0 50px rgba(0, 0, 0, 1);
+}
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 30px -30px;
+  }
+}
+section.parallel-scroll .layer.layer1 {
+  background: #222
+    radial-gradient(#6dff73 9px, #000 9px, #000 13px, transparent 13px);
+  background-size: 30px 30px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  z-index: 11;
+  animation: animate 2s linear infinite;
+}
+section.parallel-scroll .layer.layer2 {
+  background: #222
+    radial-gradient(#db0aff 9px, #000 9px, #000 13px, transparent 13px);
+  background-size: 30px 30px;
+  transform: translate(-50%, -38%) rotate(45deg);
+  z-index: 3;
+  animation: animate 2s linear infinite reverse;
+}
+section.parallel-scroll .layer.layer3 {
+  background: #222
+    radial-gradient(#03a9f4 9px, #000 9px, #000 13px, transparent 13px);
+  background-size: 30px 30px;
+  transform: translate(-50%, -62%) rotate(45deg);
+  z-index: 3;
+  animation: animate 2s linear infinite reverse;
+}
+section.parallel-scroll .layer.layer4 {
+  background: #222
+    radial-gradient(#ffc107 9px, #000 9px, #000 13px, transparent 13px);
+  background-size: 30px 30px;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  z-index: 12;
+  animation: animate 2s linear infinite reverse;
+}
+section.parallel-scroll .layer.layer5 {
+  background: #222
+    radial-gradient(#e91e63 9px, #000 9px, #000 13px, transparent 13px);
+  background-size: 30px 30px;
+  transform: translate(-50%, -38%) rotate(-45deg);
+  z-index: 10;
+  animation: animate 2s linear infinite;
+}
+section.parallel-scroll .layer.layer6 {
+  background: #222
+    radial-gradient(#0f0 9px, #000 9px, #000 13px, transparent 13px);
+  background-size: 30px 30px;
+  transform: translate(-50%, -62%) rotate(-45deg);
+  z-index: 10;
+  animation: animate 2s linear infinite;
+}
 section.glass-menu {
   position: relative;
   background-color: rgb(38, 43, 60);
