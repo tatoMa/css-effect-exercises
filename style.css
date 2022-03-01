@@ -1,7 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap");
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+section.modern-menu {
+  font-family: "Holtwood One SC", serif;
+  display: flex;
+  min-height: 95vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #252839;
+}
+section.modern-menu ul {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+section.modern-menu ul li {
+  position: relative;
+  list-style: none;
+}
+section.modern-menu ul li a {
+  position: relative;
+  font-size: 4em;
+  line-height: 1em;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.5);
+}
+section.modern-menu ul li a::before {
+  content: attr(data-text);
+  position: absolute;
+  color: var(--clr);
+  width: 0;
+  overflow: hidden;
+  transition: 1s;
+  border-right: 8px solid var(--clr);
+  -webkit-text-stroke: 1px var(--clr);
+}
+section.modern-menu ul li a:hover:before {
+  width: 100%;
+  filter: drop-shadow(0 0 25px var(--clr));
 }
 section.hover-particles {
   height: 95vh;
