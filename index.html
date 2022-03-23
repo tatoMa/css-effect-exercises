@@ -10,6 +10,15 @@
 </head>
 
 <body>
+    <section class="micro-interactive-button">
+        <a href="#" class="btn-animate"> <span> </span> <text>Delete</text></a>
+    </section>
+    <script>
+        let btn = document.querySelector('.btn-animate')
+        btn.onclick = function () {
+            btn.classList.toggle('active')
+        }
+    </script>
     <section class="modern-menu">
         <ul>
             <li style="--clr:#FC4A08">
